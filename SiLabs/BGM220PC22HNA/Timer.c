@@ -65,9 +65,9 @@ RetVal_t Timer_P_TimeInit(void)
 }
 
 /*******************************************************************************
- * Function name:
+ * Function name: Timer_P_PWMInit
  *
- * Description  :
+ * Description  : Creates a PWM signal and routed to PortA04
  * Parameters   :
  * Returns      :
  *
@@ -93,8 +93,8 @@ RetVal_t Timer_P_PWMInit(void)
 
   // Route CC0 output to PA6
   GPIO->TIMERROUTE[0].ROUTEEN  = GPIO_TIMER_ROUTEEN_CC0PEN;
-  GPIO->TIMERROUTE[0].CC0ROUTE = (gpioPortA << _GPIO_TIMER_CC0ROUTE_PORT_SHIFT)
-                    | (6 << _GPIO_TIMER_CC0ROUTE_PIN_SHIFT);
+  GPIO->TIMERROUTE[0].CC0ROUTE = (DESIRED_PWM_PORT << _GPIO_TIMER_CC0ROUTE_PORT_SHIFT)
+                    | (DESIRED_PWM_PIN << _GPIO_TIMER_CC0ROUTE_PIN_SHIFT);
 
   TIMER_InitCC(DESIRED_PWM_TIMER, 0, &timerCCInit);
 
