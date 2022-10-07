@@ -1,5 +1,5 @@
 # Commonly used pieces of code for a variety of MCUs
-<br /><br />
+<br />
 ## Templates
 header file and a source code to easy when openning new files
 
